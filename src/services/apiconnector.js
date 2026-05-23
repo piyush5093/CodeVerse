@@ -3,7 +3,7 @@ import axios from "axios";
 
 // 🔥 Create Axios Instance with Backend Base URL
 export const axiosInstance = axios.create({
-  baseURL: "http://localhost:4000/api/v1",  // Backend server
+  baseURL: process.env.REACT_APP_BASE_URL || "http://localhost:4000/api/v1",  // Backend server
   withCredentials: true,                   // Needed if using auth cookies
 });
 
