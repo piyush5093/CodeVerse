@@ -36,6 +36,29 @@
 
 ---
 
+## 👥 User Roles & Core Platform Features
+
+The Codeverse platform offers a customized dashboard experience and tailored capabilities based on user roles:
+
+### 🎓 For Students
+*   **Course Catalog Exploration:** Browse, search, and filter courses by category and view detailed syllabus timelines, instructor info, and course pricing.
+*   **Interactive Learning Console:** Watch video lectures, track course progress in real-time, and mark topics/lessons as completed.
+*   **Dynamic Cart & Secure Payments:** Add multiple courses to a persistent cart and buy courses securely using a customized Razorpay integration.
+*   **Review & Feedback Loop:** Rate courses, write constructive reviews, and read student testimonials via an animated review slider.
+*   **Context-Aware AI Tutor:** Ask doubts from a floating chatbot that has page-context awareness to answer queries instantly.
+*   **Algorithmic & Coding Practice:** Access the **DSA Visualizer** and **Play Adventure** interfaces directly from the student dashboard sidebar.
+
+### 👨‍🏫 For Instructors
+*   **Instructor Statistics Dashboard:** View telemetry statistics detailing their courses, total number of enrolled students, and total revenue earned.
+*   **Course Creator Suite (Course Builder):** 
+    *   Initialize new courses, define titles, pricing, prerequisites, and categories.
+    *   Upload high-quality thumbnails powered by a dynamic Cloudinary upload stream.
+    *   Add sections and nested subsections containing video lectures.
+*   **Course Editor Deck:** Edit course details, modify nested sections, and update subsection video uploads.
+*   **Draft & Publish Control:** Manage their catalog table, toggle courses between Draft (hidden) and Published (live), review pricing, and delete courses.
+
+---
+
 ## 🛠️ Technology Stack
 
 | Layer | Technologies |
