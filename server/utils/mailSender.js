@@ -17,7 +17,7 @@ const mailSender = async (email, title, body) => {
 
 
             let info = await transporter.sendMail({
-                from: 'Codeverse || CodeHelp - by Sahil & Team',
+                from: `"Codeverse" <${process.env.MAIL_USER}>`,
                 to:`${email}`,
                 subject: `${title}`,
                 html: `${body}`,
