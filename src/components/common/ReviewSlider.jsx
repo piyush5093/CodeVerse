@@ -12,7 +12,7 @@ import "../../App.css";
 import { FaStar } from "react-icons/fa";
 
 // Import required modules
-import { FreeMode, Pagination, Autoplay } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 
 // API Connector and Endpoints
 import { apiConnector } from "../../services/apiconnector";
@@ -88,8 +88,23 @@ function ReviewSlider() {
         if (data?.success) {
           fetchedReviews = data?.data || [];
         }
+        
+        // Sanitize database reviews to guarantee no runtime failures (like rating.toFixed)
+        const sanitizedFetched = fetchedReviews.map((r) => ({
+          user: {
+            firstName: r?.user?.firstName || "Student",
+            lastName: r?.user?.lastName || "",
+            image: r?.user?.image || `https://api.dicebear.com/5.x/initials/svg?seed=${r?.user?.firstName || "Student"} ${r?.user?.lastName || ""}`,
+          },
+          course: {
+            courseName: r?.course?.courseName || "Featured Course"
+          },
+          review: r?.review || "Highly interactive learning environment!",
+          rating: Number(r?.rating) || 5,
+        }));
+
         // Merge actual user reviews with mock reviews to guarantee a full, engaging slider
-        setReviews([...fetchedReviews, ...mockReviews]);
+        setReviews([...sanitizedFetched, ...mockReviews]);
       } catch (error) {
         console.log("Could not fetch reviews, using mock testimonials fallback.");
         setReviews(mockReviews);
@@ -104,9 +119,8 @@ function ReviewSlider() {
           slidesPerView={1}
           spaceBetween={25}
           loop={true}
-          freeMode={true}
           autoplay={{
-            delay: 3000,
+            delay: 2000,
             disableOnInteraction: false,
           }}
           breakpoints={{
@@ -124,7 +138,7 @@ function ReviewSlider() {
             clickable: true,
             dynamicBullets: true,
           }}
-          modules={[FreeMode, Pagination, Autoplay]}
+          modules={[Pagination, Autoplay]}
           className="w-full pb-12"
         >
           {reviews.map((review, i) => (

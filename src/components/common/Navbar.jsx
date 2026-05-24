@@ -4,7 +4,7 @@ import { BsChevronDown } from "react-icons/bs"
 import { useSelector } from "react-redux"
 import { Link, matchPath, useLocation } from "react-router-dom"
 
-import logo from "../../assets/Logo/codeverse_logo_new.png"
+
 import { NavbarLinks } from "../../data/navbar-links"
 import { apiConnector } from "../../services/apiconnector"
 import { categories } from "../../services/apis"
@@ -60,7 +60,12 @@ function Navbar() {
       <div className="flex w-11/12 max-w-maxContent items-center justify-between ">
         {/* Logo */}
         <Link to="/">
-          <img src={logo} alt="Logo" width={160} height={42} loading="lazy"/>
+          <div className="flex items-center gap-1 text-xl font-bold tracking-wider text-richblack-5 select-none hover:opacity-90 transition-opacity">
+            <span className="text-yellow-50 font-mono">&lt;</span>
+            <span>Code</span>
+            <span className="bg-gradient-to-r from-yellow-50 to-yellow-200 bg-clip-text text-transparent">Verse</span>
+            <span className="text-yellow-50 font-mono">/&gt;</span>
+          </div>
         </Link>
         {/* Navigation links */}
         <nav className="hidden md:block">
