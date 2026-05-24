@@ -63,7 +63,7 @@ export async function buyCourse(
 
     // Razorpay Options
     const options = {
-      key: process.env.REACT_APP_RAZORPAY_KEY,
+      key: orderResponse.data.razorpayKey || process.env.REACT_APP_RAZORPAY_KEY,
       currency: "INR",
       amount: orderResponse.data.data.amount, // number, not string
       order_id: orderResponse.data.data.id,
