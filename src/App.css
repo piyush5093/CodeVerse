@@ -262,6 +262,18 @@ border-image-source: linear-gradient(to right, #12d8fa, #1fa2ff);
 /* .swiper-slide {
   @apply bg-richblack-800 text-richblack-25 p-3 text-[14px];
 } */
+/* Swiper CSS Overrides */
+.swiper-pagination-bullet {
+  background-color: #4b5563 !important;
+  opacity: 0.6 !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: #ffd700 !important;
+  opacity: 1 !important;
+  width: 18px !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease;
+}
 /* Swiper CSS Ends */
 
 .blackButton {
